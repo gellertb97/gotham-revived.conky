@@ -10,8 +10,9 @@ https://deviantdark.deviantart.com/
 
 <p>If you have feedback, I'd love to hear it!</p>
 <h3>Enjoy</h3>
-
-
+<br>
+<br>
+<br>
 <p align="center">
   <h4>Latest Screenshot:</h4>
   <img src="https://cdn.rawgit.com/gellertb97/gotham-revived.conky/1d172181/img/conky_scrn0.png" width=600>
