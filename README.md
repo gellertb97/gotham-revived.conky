@@ -1,1 +1,1 @@
-# gotham-revived.conky
+# Gotham-Revived
