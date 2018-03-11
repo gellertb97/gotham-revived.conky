@@ -8,7 +8,5 @@
 https://deviantdark.deviantart.com/
 </p>
 
-<p>
-If you have feedback, I'd love to hear it! 
-Enjoy
-</p>
+<p>If you have feedback, I'd love to hear it!</p>
+<h3>Enjoy</h3>
