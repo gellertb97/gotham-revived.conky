@@ -1,0 +1,65 @@
+use_xft yes
+xftfont 123:size=8
+xftalpha 0.1
+update_interval 2
+total_run_times 0
+
+#own_window yes
+#own_window_type desktop
+#own_window_transparent no
+#own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+#own_window_colour ffffff
+#own_window_argb_visual yes
+#own_window_argb_value 255
+
+own_window yes
+own_window_transparent false
+own_window_type desktop
+own_window_argb_visual true
+own_window_argb_value 200
+own_window_class override
+#own_window_colour 808080
+own_window_colour 5e697a
+
+double_buffer yes
+#minimum_size 250
+#maximum_width 500
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
+default_color white
+default_shade_color red
+default_outline_color green
+alignment top_right
+gap_x -10
+gap_y 30
+no_buffers yes
+uppercase no
+cpu_avg_samples 2
+net_avg_samples 1
+override_utf8_locale yes
+use_spacer yes
+minimum_size 150 450
+
+
+TEXT
+${voffset 10}${color EAEAEA}${font GE Inspira:pixelsize=120}${time %I:%M}${font}${voffset -84}${offset 10}${color FFA300}${font GE Inspira:pixelsize=42}${time %d} ${voffset -15}${color FFA300}${font GE Inspira:pixelsize=22}${time  %B} ${time %Y}${font}${voffset 24}${font GE Inspira:pixelsize=58}${offset -148}${time %A}${font}
+${voffset 1}${offset 12}${font Ubuntu:pixelsize=12}${color FFA300}HD ${offset 9}$color${fs_free /} / ${fs_size /}${offset 30}${color FFA300}RAM ${offset 9}$color$mem / $memmax${offset 30}${color FFA300}CPU ${offset 9}$color${cpu cpu0}%
+${voffset 1}${offset 12}${color FFA300}OS ${offset 9}$color${execi 3600 cat /etc/*release | grep PRETTY | awk '{split($0,a,"\""); print a[2]}'}${offset 30}${color FFA300}Kernel ${offset 9}$color${exec uname -a | awk '{print $3}'}
+${execi 3600 ./linux_stickers/linux_sticker.sh}${image ./linux_sticker.png -p 400,140 -s 200x300}
+${voffset 4}${offset 12}${color faff00}MB${offset 9}$color${execi 3600 { cat /sys/devices/virtual/dmi/id/board_vendor; cat /sys/devices/virtual/dmi/id/board_name; } | tr "\n" " "} 
+${voffset 1}${offset 12}${color faff00}MB Temp${offset 9}$color${exec sensors|grep 'M/B Temp'| awk '{print $3}'}
+${voffset 1}${offset 12}${color faff00}CPU${offset 9}$color${execi 3600 lscpu | grep "Model name" | awk '{$1=$2=""; print $0}'}
+${voffset 1}${offset 12}${color faff00}CPU Temp ${offset 9}$color${exec sensors|grep 'CPU Temp:'| awk '{print $3}'}
+${voffset 10}${offset 12}${color 00dd76}Processes ${goto 200} Network$color
+${voffset 1}${offset 12}${top name 1} ${goto 150}${top cpu 1}% ${goto 200} Local IP ${goto 275}${execi 30 ip r l | grep default | awk '{print $3}'}
+${voffset 1}${offset 12}${top name 2} ${goto 150}${top cpu 2}% ${goto 200} External IP ${goto 275}${execi 120 curl /dev/stdout http://checkip.dyndns.org/ | cut -d : -f 2- | cut -d \< -f -1 | awk '{print $1}'}
+${voffset 1}${offset 12}${top name 3} ${goto 150}${top cpu 3}% ${goto 200} Down Xfer ${goto 275}${downspeedf enp2s0} KiB/s
+${voffset 1}${offset 12}${top name 4} ${goto 150}${top cpu 4}% ${goto 200} Up Xfer ${goto 275}${upspeedf enp2s0} KiB/s
+${voffset 1}${offset 12}${top name 5} ${goto 150}${top cpu 5}%
+${voffset 1}${offset 12}${top name 6} ${goto 150}${top cpu 6}%
+${voffset 1}${offset 12}${top name 7} ${goto 150}${top cpu 7}%
+${voffset 1}${offset 12}${top name 8} ${goto 150}${top cpu 8}%
+${voffset 1}${offset 12}${top name 9} ${goto 150}${top cpu 9}%
+${voffset 1}${offset 12}${top name 10}${goto 150}${top cpu 10}%
