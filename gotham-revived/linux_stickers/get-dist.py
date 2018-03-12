@@ -2,4 +2,4 @@
 
 import platform
 
-print(platform.dist()[0])
+print((platform.dist()[0]).lower())
