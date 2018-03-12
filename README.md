@@ -15,5 +15,5 @@ https://deviantdark.deviantart.com/
 <br>
 <p align="center">
   <h4>Latest Screenshot:</h4>
-  <img src="https://cdn.rawgit.com/gellertb97/gotham-revived.conky/1d172181/img/conky_scrn0.png" width=600>
+  <img src="https://cdn.rawgit.com/gellertb97/gotham-revived.conky/alpha0.2/screen1.png" width=600>
 </p>
