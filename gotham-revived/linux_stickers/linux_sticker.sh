@@ -3,8 +3,6 @@
 rm ../linux_sticker.png
 
 distro=`python3 ./get-dist.py`
-#distro='ROSA'
-#echo $distro
 
 if [ `ls -l *.png | grep $distro | awk '{print $9}' | wc -m` = 0 ]; then
 	curdir=`pwd`
